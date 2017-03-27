@@ -10,14 +10,7 @@ namespace DecoratorandInterface
     {
         static void Main()
         {
-            /*
             
-            Archiveable archiveableVideo = new Archiveable(borrowvideo);
-            archiveableVideo.ArchiveItem("Old Archive");
-            archiveableVideo.ArchiveItem("Ancient Archive");
-            
-            archiveableVideo.Display();           
-            */
             Program p = new Program();
             p.run();
             Console.ReadKey();
@@ -33,6 +26,10 @@ namespace DecoratorandInterface
             video = ds.MakeBorrowable(video);
             video = ds.BorrowItem(video, "Customer #1");
             video = ds.BorrowItem(video, "Customer #2");
+            ds.Display(video);
+            video = ds.MakeArchievable(video);
+            video = ds.ArchiveItem(video, "Old Archive");
+            video = ds.ArchiveItem(video, "Ancient Archive");
             ds.Display(video);
 
 

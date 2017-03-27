@@ -14,7 +14,7 @@ namespace DecoratorandInterface
         LibraryItem MakeArchievable(LibraryItem item);
         LibraryItem BorrowItem(LibraryItem item, string name);
         void ReturnItem(LibraryItem item, string name);
-        void ArchiveItem(LibraryItem item, string archive);
+        LibraryItem ArchiveItem(LibraryItem item, string archive);
         void Display(LibraryItem item);
 
     }

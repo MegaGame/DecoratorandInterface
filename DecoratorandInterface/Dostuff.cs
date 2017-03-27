@@ -8,9 +8,13 @@ namespace DecoratorandInterface
 {
     public class DoStuff : LibraryInterface
     {
-        public void ArchiveItem(LibraryItem item, string archive)
+        public LibraryItem ArchiveItem(LibraryItem item, string archive)
         {
-           
+            if (item.GetType() == typeof(Archiveable))
+            {
+                ((Archiveable)item).ArchiveItem(archive);
+            }
+            return item;
         }
         public LibraryItem BorrowItem(LibraryItem item, string name)
         {           
@@ -38,7 +42,7 @@ namespace DecoratorandInterface
 
         public LibraryItem MakeArchievable(LibraryItem item)
         {
-            throw new NotImplementedException();
+            return new Archiveable(item);
         }
 
         public LibraryItem MakeBorrowable(LibraryItem item)
